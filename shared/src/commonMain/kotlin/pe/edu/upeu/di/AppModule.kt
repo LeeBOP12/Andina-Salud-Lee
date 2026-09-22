@@ -14,6 +14,8 @@ import pe.edu.upeu.domain.usecase.ObtenerDatosInicialesUseCase
 import pe.edu.upeu.domain.usecase.SolicitarCitaUseCase
 import pe.edu.upeu.presentation.citas.CitasViewModel
 import pe.edu.upeu.presentation.detalle.DetalleCitaViewModel
+import pe.edu.upeu.presentation.inicio.InicioViewModel
+import pe.edu.upeu.presentation.perfil.PerfilViewModel
 import pe.edu.upeu.presentation.solicitud.SolicitudViewModel
 
 val dataModule = module {
@@ -28,9 +30,11 @@ val domainModule = module {
 }
 
 val presentationModule = module {
+    viewModelOf(::InicioViewModel)
     viewModelOf(::CitasViewModel)
     viewModelOf(::DetalleCitaViewModel)
     viewModelOf(::SolicitudViewModel)
+    viewModelOf(::PerfilViewModel)
 }
 
 expect val platformModule: Module

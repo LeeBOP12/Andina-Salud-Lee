@@ -1,53 +1,28 @@
 package pe.edu.upeu
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.safeContentPadding
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinContext
-import org.jetbrains.compose.resources.painterResource
+import pe.edu.upeu.presentation.navigation.AppNavHost
 import pe.edu.upeu.presentation.theme.AndinaSaludTheme
-
-import andina_salud_lee.shared.generated.resources.Res
-import andina_salud_lee.shared.generated.resources.compose_multiplatform
 
 @Composable
 @Preview
 fun App() {
     KoinContext {
-        AndinaSaludTheme(darkTheme = false) {
-            var showContent by remember { mutableStateOf(false) }
-            Column(
+        var modoOscuro by rememberSaveable { mutableStateOf(false) }
+
+        AndinaSaludTheme(darkTheme = modoOscuro) {
+            AppNavHost(
+                modoOscuro = modoOscuro,
+                onModoOscuroChange = { modoOscuro = it },
                 modifier = Modifier
-                    .background(MaterialTheme.colorScheme.primaryContainer)
-                    .safeContentPadding()
-                    .fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                Button(onClick = { showContent = !showContent }) {
-                    Text("Click me!")
-                }
-                AnimatedVisibility(showContent) {
-                    val greeting = remember { Greeting().greet() }
-                    Column(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                    ) {
-                        Image(painterResource(Res.drawable.compose_multiplatform), null)
-                        Text("Compose: $greeting")
-                    }
-                }
-            }
+            )
         }
     }
 }

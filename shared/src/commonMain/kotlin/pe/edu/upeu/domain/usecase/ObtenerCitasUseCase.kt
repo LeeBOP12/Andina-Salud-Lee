@@ -1,7 +1,7 @@
-package pe.upeu.andinasalud.domain.usecase
+package pe.edu.upeu.domain.usecase
 
-import pe.upeu.andinasalud.domain.model.Cita
-import pe.upeu.andinasalud.domain.repository.CitaRepository
+import pe.edu.upeu.domain.model.Cita
+import pe.edu.upeu.domain.repository.CitaRepository
 
 class ObtenerCitasUseCase(
     private val repository: CitaRepository

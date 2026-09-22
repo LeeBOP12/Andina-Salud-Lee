@@ -1,4 +1,4 @@
-package pe.upeu.andinasalud.domain.model
+package pe.edu.upeu.domain.model
 
 sealed class EstadoCita {
     data class Programada(val recordatorioActivo: Boolean) : EstadoCita()

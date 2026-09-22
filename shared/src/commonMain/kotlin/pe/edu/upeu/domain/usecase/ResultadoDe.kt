@@ -1,4 +1,4 @@
-package pe.upeu.andinasalud.domain.usecase
+package pe.edu.upeu.domain.usecase
 
 import kotlinx.coroutines.CancellationException
 

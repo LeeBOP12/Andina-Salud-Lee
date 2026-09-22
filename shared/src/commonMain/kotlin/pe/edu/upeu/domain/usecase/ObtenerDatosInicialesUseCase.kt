@@ -1,9 +1,9 @@
-package pe.upeu.andinasalud.domain.usecase
+package pe.edu.upeu.domain.usecase
 
-import pe.upeu.andinasalud.domain.model.Medico
-import pe.upeu.andinasalud.domain.model.Paciente
-import pe.upeu.andinasalud.domain.model.Sede
-import pe.upeu.andinasalud.domain.repository.CitaRepository
+import pe.edu.upeu.domain.model.Medico
+import pe.edu.upeu.domain.model.Paciente
+import pe.edu.upeu.domain.model.Sede
+import pe.edu.upeu.domain.repository.CitaRepository
 
 data class DatosIniciales(
     val paciente: Paciente,

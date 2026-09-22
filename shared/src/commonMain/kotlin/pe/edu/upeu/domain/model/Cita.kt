@@ -1,4 +1,4 @@
-package pe.upeu.andinasalud.domain.model
+package pe.edu.upeu.domain.model
 
 data class Cita(
     val id: Long,

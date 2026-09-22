@@ -1,10 +1,10 @@
-package pe.upeu.andinasalud.domain.repository
+package pe.edu.upeu.domain.repository
 
-import pe.upeu.andinasalud.domain.model.Cita
-import pe.upeu.andinasalud.domain.model.Medico
-import pe.upeu.andinasalud.domain.model.Paciente
-import pe.upeu.andinasalud.domain.model.Sede
-import pe.upeu.andinasalud.domain.model.SolicitudCita
+import pe.edu.upeu.domain.model.Cita
+import pe.edu.upeu.domain.model.Medico
+import pe.edu.upeu.domain.model.Paciente
+import pe.edu.upeu.domain.model.Sede
+import pe.edu.upeu.domain.model.SolicitudCita
 
 interface CitaRepository {
     suspend fun obtenerPaciente(): Paciente

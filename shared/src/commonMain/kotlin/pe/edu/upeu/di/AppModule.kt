@@ -14,6 +14,7 @@ import pe.edu.upeu.domain.usecase.ObtenerDatosInicialesUseCase
 import pe.edu.upeu.domain.usecase.SolicitarCitaUseCase
 import pe.edu.upeu.presentation.citas.CitasViewModel
 import pe.edu.upeu.presentation.detalle.DetalleCitaViewModel
+import pe.edu.upeu.presentation.solicitud.SolicitudViewModel
 
 val dataModule = module {
     single<CitaRepository> { CitaRepositoryFake() }
@@ -29,6 +30,7 @@ val domainModule = module {
 val presentationModule = module {
     viewModelOf(::CitasViewModel)
     viewModelOf(::DetalleCitaViewModel)
+    viewModelOf(::SolicitudViewModel)
 }
 
 expect val platformModule: Module

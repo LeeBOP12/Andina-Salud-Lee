@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinContext
 import org.jetbrains.compose.resources.painterResource
+import pe.edu.upeu.presentation.theme.AndinaSaludTheme
 
 import andina_salud_lee.shared.generated.resources.Res
 import andina_salud_lee.shared.generated.resources.compose_multiplatform
@@ -24,7 +25,7 @@ import andina_salud_lee.shared.generated.resources.compose_multiplatform
 @Preview
 fun App() {
     KoinContext {
-        MaterialTheme {
+        AndinaSaludTheme(darkTheme = false) {
             var showContent by remember { mutableStateOf(false) }
             Column(
                 modifier = Modifier
